@@ -1,0 +1,5 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3040:3040"
