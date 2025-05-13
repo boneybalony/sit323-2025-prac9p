@@ -12,4 +12,10 @@ http://localhost:3040/divide?n1=5&n2=5 for performing the basic calculation
 http://localhost:3040/deleteResult?n1=5&n2=5&operation=divide for deleting that basic calculation record from MongoDB
 http://localhost:3040/updateResult?n1=5&n2=5&operation=divide&newResult=2.5 for updating the result of the calculation record from 5/5 = 1 to 5/5 = 2.5
 
-I was not able to include a backup system for the MongoDB Cluster as that would have unfortunately cost money, I apologise for not the full completion of this assignment in that regard.
+Despite issues with free cluster I was able to perform a backup to my local SSD using the commands
+
+$timestamp = Get-Date -Format "yyyy-MM-dd"
+$uri = "mongodb+srv://projectuser:<db_password>@cluster0.pioxtf6.mongodb.net/"
+$outDir = "C:\Backups\mongo-backup-$timestamp"
+
+mongodump --uri=$uri --out=$outDir
